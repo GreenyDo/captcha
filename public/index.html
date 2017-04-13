@@ -9,8 +9,13 @@
     </head>
     <body>
         <p>hello index</p>
-        <form action="/captcha">
-        	
+        <a  id="a_click">获取验证码</a>
+        <a href="/error">错误尝试</a>
+        <p id="the_img"></p>//放置svg图像
+        <form action="/verifycaptcha" method="post">
+            <input type="text" name="captchacode">
+            <input type="submit">
         </form>
+        <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>

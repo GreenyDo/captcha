@@ -26,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/', users);
 
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -59,14 +60,7 @@ app.use(function(err, req, res, next) {
     res.render('error', ejsErr);
 });
 
-//验证码使用
-app.get('/captcha', function (req, res) {
-  var captcha = svgCaptcha.create();
-  req.session.captcha = captcha.text;
-  
-  res.set('Content-Type', 'image/svg+xml');
-  res.status(200).send(captcha.data);
-});
+
 
 
 module.exports = app;
